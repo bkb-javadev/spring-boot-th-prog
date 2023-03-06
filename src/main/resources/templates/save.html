@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/order}" th:object="${orders}">
+  <label for="name">Enter name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+  <br/>
+  <label for="senderCity">Enter sender city: </label>
+  <input type="text" th:field="*{senderCity}" id="senderCity"/>
+  <br/>
+  <label for="sendersAddress">Enter sender address: </label>
+  <input type="text" th:field="*{sendersAddress}" id="sendersAddress"/>
+  <br/>
+  <label for="recipientCity">Enter recipient city: </label>
+  <input type="text" th:field="*{recipientCity}" id="recipientCity"/>
+  <br/>
+  <label for="cargoWeight">Enter cargo weight: </label>
+  <input type="number" th:field="*{cargoWeight}" id="cargoWeight"/>
+  <br/>
+  <label for="pickupDate">Enter pickup date: </label>
+  <input type="date" th:field="*{pickupDate}" id="pickupDate"/>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>
