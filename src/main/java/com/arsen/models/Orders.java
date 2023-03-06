@@ -28,7 +28,7 @@ public class Orders {
     @Column(name = "recipient_address")
     private String recipientAddress;
     @Column(name = "cargo_weigth")
-    private Double cargoWeight;
+    private Integer cargoWeight;
     @Column(name = "pickup_date")
     private LocalDate pickupDate;
 }
