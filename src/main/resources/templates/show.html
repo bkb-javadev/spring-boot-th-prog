@@ -2,27 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Информация о заказе</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             font-size: 16px;
             line-height: 1.5;
+            margin: auto;
+            text-align: center;
         }
         h3 {
             font-weight: bold;
             font-size: 24px;
             margin-bottom: 10px;
         }
-
         p {
-            margin: 0 0 10px;
+            margin: 10px 0;
         }
-
         form {
             display: inline-block;
         }
-
         input[type="submit"] {
             background-color: #f44336;
             color: white;
@@ -36,13 +35,11 @@
             cursor: pointer;
             border-radius: 4px;
         }
-
         a {
             color: #008CBA;
             text-decoration: none;
             font-size: 16px;
         }
-
         a:hover {
             color: #005580;
         }
@@ -50,19 +47,21 @@
 </head>
 <body>
 <h3 th:text="${'Информация о заказе с id ' + order.getId()}"></h3>
-<h3>Name</h3>
+<h3>Название</h3>
 <p th:text="${order.getName()}">VALUE</p>
-<p th:text="${'Откуда? ' + order.getSenderCity() + ', ' + order.getSendersAddress()}">VALUE</p>
-<p th:text="${'Куда? ' + order.getRecipientCity() + ', ' + order.getRecipientAddress()}">VALUE</p>
+<h3>Откуда?</h3>
+<p th:text="${order.getSenderCity() + ', ' + order.getSendersAddress()}">VALUE</p>
+<h3>Куда?</h3>
+<p th:text="${order.getRecipientCity() + ', ' + order.getRecipientAddress()}">VALUE</p>
 <h3>Вес груза</h3>
-<p th:text="${order.getCargoWeight()}">VALUE</p>
+<p th:text="${order.getCargoWeight() + ' кг'}">VALUE</p>
 <h3>Дата забора груза</h3>
 <p th:text="${order.getPickupDate()}">VALUE</p>
 <br><br>
 <form th:method="DELETE" th:action="@{/order/{id}(id=${order.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
-<br><br>
+<br><br><hr>
 <a href="/order">На главную</a>
 </body>
 </html>

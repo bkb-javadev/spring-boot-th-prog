@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Новый заказ</title>
   <style>
     body{
       font-family: Arial, sans-serif;
@@ -62,7 +62,7 @@
   <label for="recipientAddress">Адрес получателя</label>
   <input type="text" th:field="*{recipientAddress}" id="recipientAddress"/>
   <br/>
-  <label for="cargoWeight">Вес груза</label>
+  <label for="cargoWeight">Вес груза (кг)</label>
   <input type="number" th:field="*{cargoWeight}" id="cargoWeight"/>
   <br/>
   <label for="pickupDate">Дата забора груза</label>
@@ -70,6 +70,7 @@
   <br/>
   <input type="submit" value="Create!"/>
 </form>
-
+<br><br><hr>
+<a href="/order">На главную</a>
 </body>
 </html>
